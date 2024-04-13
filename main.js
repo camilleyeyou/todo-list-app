@@ -1,5 +1,7 @@
+
+var todos = JSON.parse(localStorage.getItem('todos')) || [];
+
 window.addEventListener('load', () => {
-    todos = JSON.parse(localStorage.getItem('todos')) || [];
     const nameInput = document.querySelector('#name');
     const newTodoForm = document.querySelector('#new-todo-form');
 
@@ -38,8 +40,10 @@ function DisplayTodos () {
 
     todoList.innerHTML = '';
 
-    todos.forEach(todo => {
-        const todoItem = document.createtElement('div');
+    todos.forEach((todo) => {
+        const todoItem = document.createElement("div");
+        console.log(todoItem)
+        // const todoItem = document.createtElement('div');
         todoItem.classList.add('todo-item')
 
         const label = document.createElement('label');
